@@ -1,3 +1,6 @@
 tmp
 .DS_Store
 .php_cs.cache
+composer.json
+composer.lock
+vendor
