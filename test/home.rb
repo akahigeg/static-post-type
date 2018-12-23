@@ -22,7 +22,7 @@ class HomeTest < Test::Unit::TestCase
   end
 
   def test_login
-    @driver.get "http://localhost:8888/wp-admin/"
+    @driver.get "http://localhost:8888/wp-login.php"
     input("log", ADMIN_USER_NAME)
     input("pwd", ADMIN_USER_PASS)
     @driver.find_element(:id, "wp-submit").click
