@@ -19,4 +19,4 @@ jobs:
           paths:
             - vendor/bundle
 
-      - run: ruby test/home.rb
+      - run: bundle exec ruby test/home.rb
