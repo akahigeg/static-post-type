@@ -9,7 +9,11 @@ jobs:
             command: docker-compose up -d --build
 
       - run:
-            name: install wordpress
+            name: install WP CLI
+            command: curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && chmod +x wp-cli.phar && mv wp-cli.phar /usr/local/bin/wp
+
+      - run:
+            name: install WordPress
             command: wp core install --url=localhost:8888 --title=StaticPostTypeDev --admin_user=admin@example.com --admin_password=pass --admin_email=admin@example.com
 
       - cache-restore:
