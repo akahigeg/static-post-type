@@ -8,8 +8,6 @@ services:
             - "8888:80"
         depends_on:
             - db
-        environment:
-            WORDPRESS_DB_HOST: "db:3306"
         env_file: .env
         volumes:
             - ./src:/var/www/html/wp-content/plugins/static-post-type
