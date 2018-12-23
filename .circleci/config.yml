@@ -18,3 +18,5 @@ jobs:
           key: repo-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
+
+      - run: ruby test/home.rb
