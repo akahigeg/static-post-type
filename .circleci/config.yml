@@ -9,6 +9,8 @@ jobs:
             command: |
                  docker-compose up -d
 
+      - run wp core install --url=localhost:8888 --title=StaticPostTypeDev --admin_user=admin@example.com --admin_password=pass --admin_email=admin@example.com
+
       - cache-restore:
           key: repo-{{ checksum "Gemfile.lock" }}
 
