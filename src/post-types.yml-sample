@@ -37,13 +37,15 @@ some_post:
     labels:
       name: Some Post
     public: true
+    show_in_rest: true
     has_archive: true
-    supports: title
+    supports: [title, editor]
   taxonomies:
     - common_tag:
         hierarchical: false
         public: true
         show_ui: true
+        show_in_rest: true
         label: CommonTag
     - some_post_category:
         hierarchical: true
@@ -109,7 +111,8 @@ some_post:
         values:
           - apple
           - orange
-        description: checkboxes.
+          - banana
+        description: checkboxes description.
     - cb2:
         label: CheckBox2
         input: checkbox
@@ -206,23 +209,23 @@ some_post:
       - some_post_category:
           label: SPCat
   sortable_columns:
-    - field3
+    - field1
   meta_boxes:
     - box1:
-        label: ぼっくす
+        label: META BOX 1
         context: side 
         fields:
           - field1
           - field2
     - box2:
-        label: ぼっくす2
+        label: META BOX 2
         context: normal
         fields:
           - radio1
           - radio2
           - radio3
     - box3:
-        label: ぼっくす3
+        label: META BOX 3
         context: normal
         rendering_function: spt_example_rendering_meta_box_func
         priority: high
@@ -233,6 +236,7 @@ another_post:
     labels:
       name: Another Post
     public: true
+    show_in_rest: true
     has_archive: true
     hierarchical: true
   taxonomies:

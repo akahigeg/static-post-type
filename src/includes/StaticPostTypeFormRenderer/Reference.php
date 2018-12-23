@@ -8,6 +8,7 @@ class StaticPostTypeFormRendererReference {
     $relation_posts = get_posts($options['reference_query_options']);
     $html = '';
     if (empty($relation_posts)) {
+      $html .= StaticPostTypeFormRendererLabel::build($field_name, $options);
       $html .= 'nothing to select';
       return $html;
     }
