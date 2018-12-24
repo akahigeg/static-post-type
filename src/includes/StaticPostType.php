@@ -1,6 +1,10 @@
 <?php
 class StaticPostType
 {
+    /**
+     * Regsiter post types from a static config file(post-types.yml)
+     * 
+     */
     public static function init()
     {
         $post_types = self::readConfig();
@@ -33,6 +37,12 @@ class StaticPostType
         return yaml_parse_file($yaml_path);
     }
 
+    /**
+     * Register a post type and related taxonomies by a post type name and options.
+     * 
+     * @param string $post_type_name Slug of a post type
+     * @param array $options Post type options
+     */
     private static function registerPostType($post_type_name, $options)
     {
         $register_options = isset($options['register_options']) ? $options['register_options'] : array();
