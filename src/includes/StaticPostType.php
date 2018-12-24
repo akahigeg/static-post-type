@@ -4,6 +4,7 @@ class StaticPostType
     /**
      * Regsiter post types from a static config file(post-types.yml)
      * 
+     * @return void
      */
     public static function init()
     {
@@ -15,6 +16,11 @@ class StaticPostType
         }
     }
 
+    /**
+     * Load a static post type config file.
+     * 
+     * @return void
+     */
     public static function readConfig()
     {
         $yaml_path_on_theme = get_stylesheet_directory() . '/post-types.yml';
