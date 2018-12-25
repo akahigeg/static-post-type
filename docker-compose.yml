@@ -11,7 +11,8 @@ services:
         env_file: .env
         volumes:
             - ./src:/var/www/html/wp-content/plugins/static-post-type
-            - language-files:/var/www/html/wp-content/languages
+            - ./devenv/languages:/var/www/html/wp-content/languages
+            - ./devenv/docker-php-ext-xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
             - for-testing:/tmp
     db:
         image: mysql:5.7
