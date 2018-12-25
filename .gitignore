@@ -4,3 +4,4 @@ tmp
 composer.json
 composer.lock
 vendor
+.vscode
