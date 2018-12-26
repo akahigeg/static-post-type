@@ -1,4 +1,13 @@
 <?php
+/**
+ * The main class of this plugin.
+ * 
+ * - Load a static config file(post-types.yml)
+ * - Register post types and taxonomies
+ * - Add custom fields and save those values
+ * - Render meta boxes on admin screen
+ * - Manage columns of list of custom post type
+ */
 class StaticPostType
 {
     /**
@@ -79,11 +88,6 @@ class StaticPostType
 
         # register taxonomies
         self::registerTaxonomies($taxonomies, $post_type_name);
-
-        #
-    // if ($options['input'] == 'reference') {
-    //   add_action('wp_ajax_rewrite_' . $post_type_name, );
-    // }
     }
 
     private static function registerTaxonomies($taxonomies, $post_type_name)
