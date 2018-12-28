@@ -1,11 +1,30 @@
 <?php
+/**
+ * Rendering a text field on edit screen.
+ */
 class StaticPostTypeFormRendererText
 {
+    /**
+     * Call `build` function and echo its return
+     *
+     * @param string $field_name
+     * @param string $saved_value
+     * @param array $options
+     * @return void
+     */
     public static function render($field_name, $saved_value, $options)
     {
         echo self::build($field_name, $saved_value, $options);
     }
 
+    /**
+     * Build a text field
+     *
+     * @param string $field_name
+     * @param string $saved_value
+     * @param array $options
+     * @return void
+     */
     public static function build($field_name, $saved_value, $options)
     {
         $html = StaticPostTypeFormRendererLabel::build($field_name, $options);
