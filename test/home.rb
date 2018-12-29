@@ -36,4 +36,11 @@ class HomeTest < Test::Unit::TestCase
   #   @driver.find_element(:id, 'start-button').click
   #   assert_equal("VOTE", @driver.title)
   # end
+
+  # TODO: Custom post types created
+  # TODO: Custom field form rendering.
+  # TODO: Save custom field values
+  # TODO: Custom fields in specified meta boxes 
+  # TODO: Custom taxonomies created
+  # TODO: Enable taxonomy custom fields
 end
