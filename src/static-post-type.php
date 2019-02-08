@@ -12,22 +12,22 @@ Domain Path: /languages
 */
 
 if (!array_key_exists('static-post-type', $GLOBALS)) {
-  $include_path = plugin_dir_path(__FILE__) . 'includes';
-  require_once($include_path . '/StaticPostType.php');
-  require_once($include_path . '/StaticPostTypeUtil.php');
+    $include_path = plugin_dir_path(__FILE__) . 'includes';
+    require_once($include_path . '/StaticPostType.php');
+    require_once($include_path . '/StaticPostTypeUtil.php');
 
-foreach (scandir($include_path . '/StaticPostTypeFormRenderer') as $filename) {
-    $path = $include_path . '/StaticPostTypeFormRenderer' . '/' . $filename;
-    if (is_file($path)) {
-        require_once $path;
+    // Include form renderer classes
+    foreach (scandir($include_path . '/StaticPostTypeFormRenderer') as $filename) {
+        $path = $include_path . '/StaticPostTypeFormRenderer' . '/' . $filename;
+        if (is_file($path)) {
+            require_once $path;
+        }
     }
-}
 
-
-  $GLOBALS['static-post-type'] = new StaticPostType();
-  StaticPostType::addActions();
-  StaticPostType::enableSortableColumns();
-  StaticPostType::enableTaxonomyCustomFields();
+    $GLOBALS['static-post-type'] = new StaticPostType();
+    StaticPostType::addActions();
+    StaticPostType::enableSortableColumns();
+    StaticPostType::enableTaxonomyCustomFields();
 }
 
 /*
