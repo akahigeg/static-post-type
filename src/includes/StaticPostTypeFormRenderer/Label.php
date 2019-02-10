@@ -1,4 +1,8 @@
 <?php
+/**
+ * A Class for a label rendering.
+ *
+ */
 class StaticPostTypeFormRendererLabel {
   public static function render($field_name, $options) {
     echo self::build($field_name, $options);

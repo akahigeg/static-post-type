@@ -10,7 +10,6 @@ class StaticPostTypeFormRendererText
 {
     /**
      * Render a text field.
-     * This method calls `build` function and echo return value.
      *
      * @param string $field_name
      * @param string $saved_value
@@ -23,7 +22,7 @@ class StaticPostTypeFormRendererText
     }
 
     /**
-     * Build a text field.
+     * Build a text field for rendering.
      *
      * @param string $field_name
      * @param string $saved_value

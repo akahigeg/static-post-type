@@ -1,9 +1,12 @@
 <?php
+/**
+ * A Class for a descriptin rendering.
+ *
+ */
 class StaticPostTypeFormRendererDescription
 {
     /**
-     * Render a description for the input.
-     * This method calls `build` function and echo return value.
+     * Rendering a description for the input.
      *
      * @param string $field_name
      * @param array $options
@@ -15,7 +18,7 @@ class StaticPostTypeFormRendererDescription
     }
 
     /**
-     * Build a description.
+     * Build a description section for rendering.
      *
      * @param string $field_name
      * @param array $options
