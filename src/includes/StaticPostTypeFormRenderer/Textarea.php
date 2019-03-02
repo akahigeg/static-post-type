@@ -9,7 +9,7 @@
 class StaticPostTypeFormRendererTextarea
 {
     /**
-     * Render method for textarea.
+     * Render method for textareas.
      *
      * @param string $field_name
      * @param string $saved_value
@@ -22,7 +22,7 @@ class StaticPostTypeFormRendererTextarea
     }
 
     /**
-     * Build HTML for textarea with a label and a description.
+     * Build HTML for textareas with a label and a description.
      *
      * @param string $field_name
      * @param string $saved_value

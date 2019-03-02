@@ -1,12 +1,12 @@
 <?php
 /**
- * A Class for a descriptin rendering.
+ * A Class for rendering descriptions for inputs.
  *
  */
 class StaticPostTypeFormRendererDescription
 {
     /**
-     * Rendering a description for the input.
+     * Render method for descriptions.
      *
      * @param string $field_name
      * @param array $options
@@ -18,16 +18,16 @@ class StaticPostTypeFormRendererDescription
     }
 
     /**
-     * Build a description section for rendering.
+     * Build HTML for descriptions.
      *
      * @param string $field_name
      * @param array $options
      * @return string $html
      * 
      * $options
-     * - description: A description.
-     * - description_class: A class attribute of the description section. 
-     * - description_style: A style attribute of the description section.
+     * - description: Description text.
+     * - description_class: CSS class attribute for the description.
+     * - description_style: Style attribute for the description.
      */
     public static function build($field_name, $options)
     {
