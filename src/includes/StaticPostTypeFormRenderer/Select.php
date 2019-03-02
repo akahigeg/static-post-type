@@ -1,6 +1,6 @@
 <?php
 /**
- * Class for rendering select fields.
+ * Class for rendering select boxes.
  *
  * @see StaticPostTypeFormRendererLabel
  * @see StaticPostTypeFormRendererDescription
@@ -9,7 +9,7 @@
 class StaticPostTypeFormRendererSelect
 {
     /**
-     * Render method for select fields.
+     * Render method for select boxes.
      *
      * @param string $field_name
      * @param string $saved_value
@@ -22,7 +22,7 @@ class StaticPostTypeFormRendererSelect
     }
 
     /**
-     * Build HTML for select fields with a label and a description.
+     * Build HTML for select boxes with a label and a description.
      *
      * @param string $field_name
      * @param string $saved_value
