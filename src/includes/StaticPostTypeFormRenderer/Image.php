@@ -1,33 +1,65 @@
 <?php
-class StaticPostTypeFormRendererImage {
-  public static function render($field_name, $saved_value, $options) {
-    echo self::build($field_name, $saved_value, $options);
-  }
-
-  public static function build($field_name, $saved_value, $options) {
-    $html = StaticPostTypeFormRendererLabel::build($field_name, $options);
-
-    $html .= '<input type="hidden" id="' . $field_name . '-image" name="' . $field_name . '" class="custom_media_url" value="' . $saved_value . '">';
-    if ($saved_value == '') {
-      $html .= '<div id="' . $field_name . '-image-wrapper"></div>';
-    } else {
-      $html .= '<div id="' . $field_name . '-image-wrapper">' . wp_get_attachment_image($saved_value, 'large') . '</div>';
+/**
+ * Class for rendering image uploadings by MediaJS.
+ *
+ * @see StaticPostTypeFormRendererLabel
+ * @see StaticPostTypeFormRendererDescription
+ *
+ */
+class StaticPostTypeFormRendererImage
+{
+    /**
+     * Render method for image uploadings.
+     *
+     * @param string $field_name
+     * @param string $saved_value
+     * @param array $options
+     * @return void
+     */
+    public static function render($field_name, $saved_value, $options)
+    {
+        echo self::build($field_name, $saved_value, $options);
     }
-    $html .= '<p>
+
+    /**
+     * Build HTML for text fields with a description.
+     *
+     * @param string $field_name
+     * @param string $saved_value
+     * @param array $options
+     * @return string $html
+     *
+     * $options
+     * - description: Description displayed below the text field.
+     * - description_class: CSS class attribute for the description.
+     * - description_style: Style attribute for the description.
+     */
+    public static function build($field_name, $saved_value, $options)
+    {
+        $html = StaticPostTypeFormRendererLabel::build($field_name, $options);
+
+        $html .= '<input type="hidden" id="' . $field_name . '-image" name="' . $field_name . '" class="custom_media_url" value="' . $saved_value . '">';
+        if ($saved_value == '') {
+            $html .= '<div id="' . $field_name . '-image-wrapper"></div>';
+        } else {
+            $html .= '<div id="' . $field_name . '-image-wrapper">' . wp_get_attachment_image($saved_value, 'large') . '</div>';
+        }
+        $html .= '<p>
        <input type="button" class="button button-secondary ' . $field_name . '-media-button" id="' . $field_name . '-media-button" name="media-button" value="Add" />
        <input type="button" class="button button-secondary ' . $field_name . '-media-remove" id="' . $field_name . '-media-remove" name="media-remove" value="Remove" />
     </p>';
 
-    $html .= StaticPostTypeFormRendererDescription::build($field_name, $options);
+        $html .= StaticPostTypeFormRendererDescription::build($field_name, $options);
 
-    $html .= self::buildMediaJS($field_name, $saved_value, $options);
+        $html .= self::buildMediaJS($field_name, $saved_value, $options);
 
-    return $html;
-  }
+        return $html;
+    }
 
-  // ref: http://jeroensormani.com/how-to-include-the-wordpress-media-selector-in-your-plugin/
-  public static function buildMediaJS($field_name, $saved_value, $options) {
-    $script = <<<"EOM"
+    // ref: http://jeroensormani.com/how-to-include-the-wordpress-media-selector-in-your-plugin/
+    public static function buildMediaJS($field_name, $saved_value, $options)
+    {
+        $script = <<<"EOM"
     <script>
      jQuery(document).ready( function($) {
        function static_post_type_media_upload(button_class) {
@@ -71,6 +103,6 @@ class StaticPostTypeFormRendererImage {
    });
    </script>
 EOM;
-    return $script;
-  }
+        return $script;
+    }
 }
