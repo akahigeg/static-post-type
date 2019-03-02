@@ -1,6 +1,6 @@
 <?php
 /**
- * Rendering a text field on edit screen.
+ * Class for rendering text fields.
  *
  * @see StaticPostTypeFormRendererLabel
  * @see StaticPostTypeFormRendererDescription
@@ -9,7 +9,7 @@
 class StaticPostTypeFormRendererText
 {
     /**
-     * Render a text field.
+     * Render method for text fields.
      *
      * @param string $field_name
      * @param string $saved_value
@@ -22,7 +22,7 @@ class StaticPostTypeFormRendererText
     }
 
     /**
-     * Build a text field for rendering.
+     * Build HTML for text fields with a label and a description.
      *
      * @param string $field_name
      * @param string $saved_value
@@ -30,13 +30,15 @@ class StaticPostTypeFormRendererText
      * @return string $html
      *
      * $options
-     * - size: A size of the text field.
+     * - size: Size attribute for the text field. default: 40
      * - placeholder: A placeholder.
      * TODO: improve option values structure
-     * - label: A label text.
-     * - description: A description that shows under the text field.
-     * - description_class: A class attribute of the description section.
-     * - description_style: A style attribute of the description section.
+     * - label: Label text.
+     * - label_class: CSS class attribute for the label.
+     * - label_style: Style attribute for the label.
+     * - description: Description displayed below the text field.
+     * - description_class: CSS class attribute for the description.
+     * - description_style: Style attribute for the description.
      */
     public static function build($field_name, $saved_value, $options)
     {

@@ -1,11 +1,45 @@
 <?php
+/**
+ * Class for rendering textarea.
+ *
+ * @see StaticPostTypeFormRendererLabel
+ * @see StaticPostTypeFormRendererDescription
+ *
+ */
 class StaticPostTypeFormRendererTextarea
 {
+    /**
+     * Render method for textarea.
+     *
+     * @param string $field_name
+     * @param string $saved_value
+     * @param array $options
+     * @return void
+     */
     public static function render($field_name, $saved_value, $options)
     {
         echo self::build($field_name, $saved_value, $options);
     }
 
+    /**
+     * Build HTML for textarea with a label and a description.
+     *
+     * @param string $field_name
+     * @param string $saved_value
+     * @param array $options
+     * @return string $html
+     *
+     * $options
+     * - rows: Rows attribute for the textarea. default: 5
+     * - cols: Cols attribute for the textarea. defulat: 40
+     * TODO: improve option values structure
+     * - label: Label text.
+     * - label_class: CSS class attribute for the label.
+     * - label_style: Style attribute for the label.
+     * - description: Description displayed below the textarea.
+     * - description_class: CSS class attribute for the description.
+     * - description_style: Style attribute for the description.
+     */
     public static function build($field_name, $saved_value, $options)
     {
         if (!isset($options['label_style']) && !isset($options['label_class'])) {
