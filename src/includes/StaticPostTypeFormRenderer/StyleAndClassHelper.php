@@ -1,6 +1,16 @@
 <?php
+/**
+ * Helper class for rendering style attribuets and class attributes
+ *
+ */
 class StaticPostTypeFormRendererHelperStyleAndClass
 {
+    /**
+     * Build style attributes and class attributes for inputs.
+     *
+     * @param array $options
+     * @return string
+     */
     public static function forInput($options)
     {
         $attrs = array();
@@ -16,6 +26,12 @@ class StaticPostTypeFormRendererHelperStyleAndClass
         return implode(' ', $attrs);
     }
 
+    /**
+     * Build style attributes and class attributes for labels.
+     *
+     * @param array $options
+     * @return string
+     */
     public static function forLabel($options)
     {
         $attrs = array();
@@ -28,6 +44,12 @@ class StaticPostTypeFormRendererHelperStyleAndClass
         return implode(' ', $attrs);
     }
 
+    /**
+     * Build style attributes and class attributes for descriptions.
+     *
+     * @param array $options
+     * @return string
+     */
     public static function forDescription($options)
     {
         $attrs = array();
@@ -43,6 +65,12 @@ class StaticPostTypeFormRendererHelperStyleAndClass
         return implode(' ', $attrs);
     }
 
+    /**
+     * Default style by input type.
+     *
+     * @param string $input_type
+     * @return string
+     */
     private static function defaultInputStyle($input_type)
     {
         switch ($input_type) {
