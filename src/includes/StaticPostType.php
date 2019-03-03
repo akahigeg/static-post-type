@@ -1,17 +1,19 @@
 <?php
 /**
- * The main class of this plugin.
+ * Main class of this plugin.
  * 
- * - Load a static config file(post-types.yml)
- * - Register post types and taxonomies
- * - Add custom fields and save those values
- * - Render meta boxes on admin screen
- * - Manage columns of list of custom post type
+ * - Load the configuration file (post-types.yml)
+ * - Register post types and taxonomies.
+ * - Add custom fields and save meta values.
+ * - Render meta boxes on the post edit screen.
+ * - Manage columns in the list of custom post types.
  */
 class StaticPostType
 {
     /**
-     * Regsiter post types from a static config file(post-types.yml)
+     * Regsiter post types from the configuration file (post-types.yml)
+     * 
+     * Call by init action hook.
      * 
      * @return void
      */
@@ -26,7 +28,7 @@ class StaticPostType
     }
 
     /**
-     * Load a static post type config file.
+     * Load the static post type configuration file.
      * 
      * @return void
      */
