@@ -1,7 +1,7 @@
 <?php
 /**
  * Main class of this plugin.
- * 
+ *
  * - Load the configuration file (post-types.yml)
  * - Register post types and taxonomies.
  * - Add custom fields and save meta values.
@@ -12,9 +12,9 @@ class StaticPostType
 {
     /**
      * Regsiter post types from the configuration file (post-types.yml)
-     * 
+     *
      * Call by init action hook.
-     * 
+     *
      * @return void
      */
     public static function init()
@@ -29,7 +29,7 @@ class StaticPostType
 
     /**
      * Load the static post type configuration file.
-     * 
+     *
      * @return void
      */
     public static function readConfig()
@@ -56,9 +56,13 @@ class StaticPostType
 
     /**
      * Register a post type and related taxonomies by a post type name and options.
-     * 
-     * @param string $post_type_name Slug of a post type
-     * @param array $options Post type options
+     *
+     * @param string $post_type_name Slug of the post type
+     * @param array $options Params for `register_post_type` and `register_taxonomy`
+     *
+     * $options
+     * - register_options: Params for `register_post_type`
+     * - taxonomies: Taxonomies that can be set as post type.
      */
     private static function registerPostType($post_type_name, $options)
     {
@@ -92,6 +96,12 @@ class StaticPostType
         self::registerTaxonomies($taxonomies, $post_type_name);
     }
 
+    /**
+     * Register taxonomies.
+     *
+     * @param array $taxonomies Taxonomy names and options for `register_taxonomy`.
+     * @param string $post_type_name Slug of the post type.
+     */
     private static function registerTaxonomies($taxonomies, $post_type_name)
     {
         foreach ($taxonomies as $i => $taxonomy_name_and_args) {
