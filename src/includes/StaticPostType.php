@@ -115,10 +115,11 @@ class StaticPostType
         }
     }
 
+    /* === manage columns section === */
     /**
+     * Call by `manage_posts_columns` and `manage_pages_columns`
      *
-     *  manage columns section
-     *
+     * @param array $columns WordPress callback parameter.
      */
     public static function manageColumns($columns)
     {
@@ -154,6 +155,14 @@ class StaticPostType
         return $columns;
     }
 
+    /**
+     * Call by `manage_posts_custom_column`, * `manage_pages_custom_column` and `manage_<post_type>_custom_column`
+     * 
+     * Show the custom field value on post list.
+     *
+     * @param string $column_name
+     * @param integer $post_id
+     */
     public static function manageCustomColumns($column_name, $post_id)
     {
         // avoid double output on 'manage_posts_custom_column' and 'manage_%post_type%_posts_custom_column'
@@ -175,6 +184,10 @@ class StaticPostType
         }
     }
 
+    /**
+     * Set action hook method `StaticPostType::manageCustomColumns` to `manage_posts_custom_column`, 
+     * `manage_pages_custom_column` and `manage_<post_type>_custom_column`
+     */
     public static function enableManageCustomColumns()
     {
         $post_types = self::readConfig();
