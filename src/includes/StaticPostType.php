@@ -204,9 +204,11 @@ class StaticPostType
         }
     }
 
+    /* ===  add meta boxes section === */
     /**
-     *
-     *  add meta boxes section
+     * Call by `add_meta_boxes` action hook.
+     * 
+     * Render meta boxes for the post type.
      *
      */
     public static function addMetaBoxes()
@@ -272,6 +274,8 @@ class StaticPostType
     }
 
     /**
+     * Render a meta box.
+     *
      * @param $args => array
      *                 ["id"]=> string(18) "some_post_meta_box"
      *                 ["title"]=> string(13) "Custom Fields"
