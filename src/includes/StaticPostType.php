@@ -395,7 +395,7 @@ class StaticPostType
       case 'multiple':
         if (isset($_POST[$field_name])) {
             $update_meta_function($item_id, $field_name, $_POST[$field_name]);
-            continue;
+            break;
         }
 
         // when $_POST is not exist
